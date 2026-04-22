@@ -4,11 +4,13 @@ import mysql.connector
 app = Flask(__name__)
 
 # Database connection
+import os
+
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Hidden@7",  # put your MySQL password
-    database="hospital_db"
+    host=os.getenv("mysql.railway.internal"),
+    user=os.getenv("root"),
+    password=os.getenv("icJftNdAVKsLYQYZXOaToHhslyqRPHdI"),
+    database=os.getenv("railway")
 )
 
 # ================= PATIENTS =================
@@ -76,4 +78,4 @@ def delete_doctor(id):
 # ================= RUN APP =================
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
