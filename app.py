@@ -7,10 +7,10 @@ app = Flask(__name__)
 import os
 
 db = mysql.connector.connect(
-    host=os.getenv("mysql.railway.internal"),
-    user=os.getenv("root"),
-    password=os.getenv("icJftNdAVKsLYQYZXOaToHhslyqRPHdI"),
-    database=os.getenv("railway")
+    host=os.getenv("DB_HOST"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME")
 )
 
 # ================= PATIENTS =================
